@@ -43,6 +43,8 @@ npm start
 ## License
 This project is licensed under the MIT License.
 
+## Blog
+https://blog.postman.com/how-to-create-a-rest-api-with-node-js-and-express/
 
 
 
