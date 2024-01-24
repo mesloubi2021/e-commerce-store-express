@@ -40,6 +40,45 @@ To start the service, run the following command:
 npm start
 ```
 
+## APIs
+
+### SignUp
+```
+curl --location 'localhost:3000/signup' \
+--data-raw '{
+    "firstName": "Dinq",
+    "lastName": "Truong",
+    "email": "dinqtruong@gmail.com",
+    "username": "dinqtruong",
+    "password": "Qwertyuiop@!#$1091",
+    "role": "admin",
+    "age": 18
+}'
+```
+
+### Login
+```
+curl --location 'localhost:3000/login' \
+--data '{
+    "username": "dinqtruong",
+    "password": "Qwertyuiop@!#$1091"
+}'
+```
+
+### Get Profile
+
+```
+curl --location 'localhost:3000/user' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoicXVhbmd0cnVvbmdkLWFkbWluIiwiaWF0IjoxNzA2MDY3NjEzLCJleHAiOjE3MDYwNzEyMTN9.UMs0wF5mSRH0skPDFfH_mREVQUgBxAhk4yroHmk8y28'
+```
+
+### Get Products
+
+```
+curl --location 'localhost:3000/product' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoicXVhbmd0cnVvbmdkLWFkbWluIiwiaWF0IjoxNzA2MDY3NjEzLCJleHAiOjE3MDYwNzEyMTN9.UMs0wF5mSRH0skPDFfH_mREVQUgBxAhk4yroHmk8y28'
+```
+
 ## License
 This project is licensed under the MIT License.
 
