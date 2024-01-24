@@ -1,4 +1,4 @@
-# E-Commerce Store with NodeJS
+# This is a Folked NodeJS server used for traning purpose. Contact Author if any.
 
 This is an Express service that provides authorization functionality and includes separate folders for users and products.
 It also uses Sequelize ORM with SQLite as the database, along with the JSON Web Token (JWT) and AJV libraries.
