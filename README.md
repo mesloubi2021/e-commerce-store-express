@@ -34,8 +34,8 @@ Before running the application, make sure you have the following installed:
 3. Install the dependencies: `npm install`
 
 ## Dependencies
-1. Sequelize
-   [Sequelize](https://www.npmjs.com/package/sequelize) is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
+1. [Sequelize](https://www.npmjs.com/package/sequelize)
+   Is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
 
    Define model
     ```js
@@ -62,8 +62,8 @@ Before running the application, make sure you have the following installed:
     const users = await User.findAll();
     ```
     
-3. AJV
-   [JSON schema validator](https://github.com/ajv-validator/ajv), we use it to validate JSON input params.
+3. [AJV]((https://github.com/ajv-validator/ajv))
+   JSON schema validator, we use it to validate JSON input params.
 
    ```js
    // or ESM/TypeScript import
@@ -93,7 +93,18 @@ Before running the application, make sure you have the following installed:
    if (!valid) console.log(validate.errors)
    ```
 
-4.
+4. [Morgan](https://www.npmjs.com/package/morgan)
+   A logger middleware function
+   ```js
+   const app = Express();
+   ...
+   app.use(morgan("tiny"));
+   ```
+6. TBD
+7. TBD
+8. TBD
+9. TBD
+10. TBD
 
 ## Usage
 
