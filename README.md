@@ -34,7 +34,10 @@ Before running the application, make sure you have the following installed:
 3. Install the dependencies: `npm install`
 
 ## Dependencies
-1. [Sequelize](https://www.npmjs.com/package/sequelize)
+1. [Express](https://github.com/expressjs/express)
+   Express.js is a web application framework for Node.js, designed for building web applications and APIs
+   
+3. [Sequelize](https://www.npmjs.com/package/sequelize)
    Is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
 
    Define model
@@ -62,7 +65,7 @@ Before running the application, make sure you have the following installed:
     const users = await User.findAll();
     ```
     
-3. [AJV]((https://github.com/ajv-validator/ajv))
+4. [AJV]((https://github.com/ajv-validator/ajv))
    JSON schema validator, we use it to validate JSON input params.
 
    ```js
@@ -93,7 +96,7 @@ Before running the application, make sure you have the following installed:
    if (!valid) console.log(validate.errors)
    ```
 
-4. [Morgan](https://www.npmjs.com/package/morgan)
+5. [Morgan](https://www.npmjs.com/package/morgan)
    A logger middleware function
    ```js
    const app = Express();
