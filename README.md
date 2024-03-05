@@ -33,6 +33,68 @@ Before running the application, make sure you have the following installed:
 2. Navigate to the project directory: `cd e-commerce-service`
 3. Install the dependencies: `npm install`
 
+## Dependencies
+1. Sequelize
+   [Sequelize](https://www.npmjs.com/package/sequelize) is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
+
+   Define model
+    ```js
+    import { Sequelize, DataTypes } from 'sequelize';
+ 
+    const sequelize = new Sequelize('sqlite::memory:');
+    //const sequelize = new Sequelize({
+    //dialect: "sqlite",
+    //storage: "./storage/data.db", // Path to the file that will store the SQLite DB.
+    //});
+    const User = sequelize.define('User', {
+      username: DataTypes.STRING,
+      birthday: DataTypes.DATE,
+    });
+    ```
+
+   Persit and query
+    ```js
+    const jane = await User.create({
+      username: 'janedoe',
+      birthday: new Date(1980, 6, 20),
+    });
+    
+    const users = await User.findAll();
+    ```
+    
+3. AJV
+   [JSON schema validator](https://github.com/ajv-validator/ajv), we use it to validate JSON input params.
+
+   ```js
+   // or ESM/TypeScript import
+   import Ajv from "ajv"
+   // Node.js require:
+   const Ajv = require("ajv")
+   
+   const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
+   
+   const schema = {
+     type: "object",
+     properties: {
+       foo: {type: "integer"},
+       bar: {type: "string"},
+     },
+     required: ["foo"],
+     additionalProperties: false,
+   }
+   
+   const data = {
+     foo: 1,
+     bar: "abc",
+   }
+   
+   const validate = ajv.compile(schema)
+   const valid = validate(data)
+   if (!valid) console.log(validate.errors)
+   ```
+
+4.
+
 ## Usage
 
 To start the service, run the following command:
