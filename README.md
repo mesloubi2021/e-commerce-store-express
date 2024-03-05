@@ -37,7 +37,15 @@ Before running the application, make sure you have the following installed:
 1. [Express](https://github.com/expressjs/express)
    Express.js is a web application framework for Node.js, designed for building web applications and APIs
    
-3. [Sequelize](https://www.npmjs.com/package/sequelize)
+3. [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+   ```js
+   const privateKey = "a private key"
+   jwt.sign({ foo: 'bar' }, privateKey, { algorithm: 'RS256' }, function(err, token) {
+   console.log(token);
+   });
+   ```
+   
+4. [Sequelize](https://www.npmjs.com/package/sequelize)
    Is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
 
    Define model
@@ -65,7 +73,7 @@ Before running the application, make sure you have the following installed:
     const users = await User.findAll();
     ```
     
-4. [AJV]((https://github.com/ajv-validator/ajv))
+5. [AJV]((https://github.com/ajv-validator/ajv))
    JSON schema validator, we use it to validate JSON input params.
 
    ```js
@@ -96,14 +104,14 @@ Before running the application, make sure you have the following installed:
    if (!valid) console.log(validate.errors)
    ```
 
-5. [Morgan](https://www.npmjs.com/package/morgan)
+6. [Morgan](https://www.npmjs.com/package/morgan)
    A logger middleware function
    ```js
    const app = Express();
    ...
    app.use(morgan("tiny"));
    ```
-6. [CORS](https://www.npmjs.com/package/cors)
+7. [CORS](https://www.npmjs.com/package/cors)
    A libary to for express middleware to config CORS
    - Enable CORS for all request
    ```js
@@ -115,10 +123,6 @@ Before running the application, make sure you have the following installed:
    - Block request
    - ...
    - 
-8. TBD
-9. TBD
-10. TBD
-11. TBD
 
 ## Usage
 
