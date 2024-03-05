@@ -100,11 +100,22 @@ Before running the application, make sure you have the following installed:
    ...
    app.use(morgan("tiny"));
    ```
-6. TBD
-7. TBD
+6. [CORS](https://www.npmjs.com/package/cors)
+   A libary to for express middleware to config CORS
+   - Enable CORS for all request
+   ```js
+   var cors = require('cors')
+   var app = express()
+   app.use(cors())
+   ```
+   - Enable for signle routes
+   - Block request
+   - ...
+   - 
 8. TBD
 9. TBD
 10. TBD
+11. TBD
 
 ## Usage
 
