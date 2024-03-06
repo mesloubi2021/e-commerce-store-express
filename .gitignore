@@ -1,5 +1,5 @@
 node_modules/
-# storage/data.db
+storage/data.db
 
 package-lock.json
 yarn.lock
