@@ -11,7 +11,7 @@ const registerPayload = require("./schemas/registerPayload");
 const loginPayload = require("./schemas/loginPayload");
 
 router.post(
-  "/signup",
+  "/register",
   [SchemaValidationMiddleware.verify(registerPayload)],
   AuthorizationController.register
 );
