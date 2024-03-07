@@ -26,7 +26,7 @@ const ProductModel = {
   priceUnit: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: productPriceUnits.DOLLAR,
+    defaultValue: productPriceUnits.EURO,
   },
 };
 
