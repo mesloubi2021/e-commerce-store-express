@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "dd74132d-2ba3-4a8d-b0e5-e8814fd03a80",
+		"name": "E-Commerce Store Java Script Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1587688",
+		"_collection_link": "https://martian-firefly-886651.postman.co/workspace/My-Workspace~3a83e1cb-2d3a-43f8-8795-dc13e881b3d5/collection/1587688-dd74132d-2ba3-4a8d-b0e5-e8814fd03a80?action=share&source=collection_link&creator=1587688"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"username\": \"Timo\",\n    \"password\": \"Timo\",\n    \"email\": \"thimoty@thimoty.it\",\n    \"age\": 35,\n    \"firstName\": \"Timo\",\n    \"lastName\": \"Barbs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\": \"Timo\", \"password\": \"Timo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiVGltbyIsImlhdCI6MTcyODQ4ODcyNSwiZXhwIjoxNzI4NDkyMzI1fQ.irYiXraKZR1TEvdMhrok5a2TP5dp_c76BFfYAfmSuFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiVGltbyIsImlhdCI6MTcyODQ4ODcyNSwiZXhwIjoxNzI4NDkyMzI1fQ.irYiXraKZR1TEvdMhrok5a2TP5dp_c76BFfYAfmSuFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
