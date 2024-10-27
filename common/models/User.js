@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const { roles } = require("../../config");
-
+// kullanıcalar için veri tabanında bir tabloyu tanımlar.
 const UserModel = {
   id: {
     type: DataTypes.INTEGER,
@@ -44,29 +44,29 @@ module.exports = {
   initialise: (sequelize) => {
     this.model = sequelize.define("user", UserModel);
   },
-
+// Kullanıcı Oluşturma
   createUser: (user) => {
     return this.model.create(user);
   },
-
+//Kullanıcı Bulma
   findUser: (query) => {
     return this.model.findOne({
       where: query,
     });
   },
-
+//Kullanıcı Güncelleme
   updateUser: (query, updatedValue) => {
     return this.model.update(updatedValue, {
       where: query,
     });
   },
-
+//Tüm Kullanıcıları Bulma
   findAllUsers: (query) => {
     return this.model.findAll({
       where: query
     });
   },
-
+//Kullanıcı Silme
   deleteUser: (query) => {
     return this.model.destroy({
       where: query
