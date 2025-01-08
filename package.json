@@ -1,7 +1,7 @@
 {
-  "name": "e-commerce-service",
+  "name": "e-commerce",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is an Express service that provides authorization functionality and includes separate folders for users and products.\r It also uses Sequelize ORM with SQLite as the database, along with the JSON Web Token (JWT) and AJV libraries.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -19,5 +19,6 @@
   },
   "devDependencies": {
     "prettier": "2.8.8"
-  }
+  },
+  "keywords": []
 }
