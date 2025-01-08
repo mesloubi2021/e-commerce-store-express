@@ -1,4 +1,4 @@
-# E-Commerce Store with NodeJS
+# This is a Folked NodeJS server used for traning purpose. Contact Author if any.
 
 This is an Express service that provides authorization functionality and includes separate folders for users and products.
 It also uses Sequelize ORM with SQLite as the database, along with the JSON Web Token (JWT) and AJV libraries.
@@ -32,6 +32,97 @@ Before running the application, make sure you have the following installed:
 1. Clone the repository: `git clone git@github.com:gabvillacis/e-commerce-store-express.git`
 2. Install the dependencies: `npm install`
 
+## Dependencies
+1. [Express](https://github.com/expressjs/express)
+   Express.js is a web application framework for Node.js, designed for building web applications and APIs
+   
+3. [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+   ```js
+   const privateKey = "a private key"
+   jwt.sign({ foo: 'bar' }, privateKey, { algorithm: 'RS256' }, function(err, token) {
+   console.log(token);
+   });
+   ```
+   
+4. [Sequelize](https://www.npmjs.com/package/sequelize)
+   Is a modern TypeScript and Node.js ORM for Oracle, Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
+
+   Define model
+    ```js
+    import { Sequelize, DataTypes } from 'sequelize';
+ 
+    const sequelize = new Sequelize('sqlite::memory:');
+    //const sequelize = new Sequelize({
+    //dialect: "sqlite",
+    //storage: "./storage/data.db", // Path to the file that will store the SQLite DB.
+    //});
+    const User = sequelize.define('User', {
+      username: DataTypes.STRING,
+      birthday: DataTypes.DATE,
+    });
+    ```
+
+   Persit and query
+    ```js
+    const jane = await User.create({
+      username: 'janedoe',
+      birthday: new Date(1980, 6, 20),
+    });
+    
+    const users = await User.findAll();
+    ```
+    
+5. [AJV]((https://github.com/ajv-validator/ajv))
+   JSON schema validator, we use it to validate JSON input params.
+
+   ```js
+   // or ESM/TypeScript import
+   import Ajv from "ajv"
+   // Node.js require:
+   const Ajv = require("ajv")
+   
+   const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
+   
+   const schema = {
+     type: "object",
+     properties: {
+       foo: {type: "integer"},
+       bar: {type: "string"},
+     },
+     required: ["foo"],
+     additionalProperties: false,
+   }
+   
+   const data = {
+     foo: 1,
+     bar: "abc",
+   }
+   
+   const validate = ajv.compile(schema)
+   const valid = validate(data)
+   if (!valid) console.log(validate.errors)
+   ```
+
+6. [Morgan](https://www.npmjs.com/package/morgan)
+   A logger middleware function
+   ```js
+   const app = Express();
+   ...
+   app.use(morgan("tiny"));
+   ```
+7. [CORS](https://www.npmjs.com/package/cors)
+   A libary to for express middleware to config CORS
+   - Enable CORS for all request
+   ```js
+   var cors = require('cors')
+   var app = express()
+   app.use(cors())
+   ```
+   - Enable for signle routes
+   - Block request
+   - ...
+   - 
+
 ## Usage
 
 To start the service, run the following command:
@@ -39,9 +130,50 @@ To start the service, run the following command:
 npm start
 ```
 
+## APIs
+
+### SignUp
+```
+curl --location 'localhost:3000/signup' \
+--data-raw '{
+    "firstName": "Dinq",
+    "lastName": "Truong",
+    "email": "dinqtruong@gmail.com",
+    "username": "dinqtruong",
+    "password": "Qwertyuiop@!#$1091",
+    "role": "admin",
+    "age": 18
+}'
+```
+
+### Login
+```
+curl --location 'localhost:3000/login' \
+--data '{
+    "username": "dinqtruong",
+    "password": "Qwertyuiop@!#$1091"
+}'
+```
+
+### Get Profile
+
+```
+curl --location 'localhost:3000/user' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoicXVhbmd0cnVvbmdkLWFkbWluIiwiaWF0IjoxNzA2MDY3NjEzLCJleHAiOjE3MDYwNzEyMTN9.UMs0wF5mSRH0skPDFfH_mREVQUgBxAhk4yroHmk8y28'
+```
+
+### Get Products
+
+```
+curl --location 'localhost:3000/product' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoicXVhbmd0cnVvbmdkLWFkbWluIiwiaWF0IjoxNzA2MDY3NjEzLCJleHAiOjE3MDYwNzEyMTN9.UMs0wF5mSRH0skPDFfH_mREVQUgBxAhk4yroHmk8y28'
+```
+
 ## License
 This project is licensed under the MIT License.
 
+## Blog
+https://blog.postman.com/how-to-create-a-rest-api-with-node-js-and-express/
 
 
 
