@@ -41,8 +41,8 @@ sequelize
 
     // Attaching the Authentication and User Routes to the app.
     app.use("/", AuthorizationRoutes);
-    app.use("/user", UserRoutes);
-    app.use("/product", ProductRoutes);
+    app.use("/usuarios", UserRoutes);
+    app.use("/productos", ProductRoutes);
 
     app.listen(PORT, () => {
       console.log("Server Listening on PORT:", port);
